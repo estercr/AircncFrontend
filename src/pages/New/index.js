@@ -5,7 +5,7 @@ import api from '../../services/api';
 import camera from '../../assets/camera.svg';
 import './styles.css';
 
-export default function New(history) {
+export default function New({ history }) {
     const [thumbnail, setThumbnail] = useState(null);
     const [company, setCompany] = useState('');
     const [techs, setTechs] = useState('');
@@ -17,7 +17,7 @@ export default function New(history) {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        
+
         const data = new FormData();
         const user_id = localStorage.getItem('user');
 
@@ -30,14 +30,14 @@ export default function New(history) {
             headers: { user_id }
         })
 
-        history.push('/dashboard')
+        history.push('/dashboard');
     }
 
     return (
         <form onSubmit={handleSubmit}>
             <label
                 id="thumbnail"
-                style={{ backgroundImage: `${preview}` }}
+                style={{ backgroundImage: `url(${preview})` }}
                 className={thumbnail ? 'has-thumbnail' : ''}
             >
                 <input type="file" onChange={event => setThumbnail(event.target.files[0])} />

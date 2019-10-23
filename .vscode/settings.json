@@ -1,3 +1,11 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+
+    //Atalhos de código
+    "emmet.syntaxProfiles": {
+        "javascript": "jxs",
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+    },
 }
